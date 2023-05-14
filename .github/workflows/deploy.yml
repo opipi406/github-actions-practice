@@ -6,10 +6,6 @@ on:
     branches:
       - develop
       - main
-  pull_request:
-    branches:
-      - develop
-      - main
   workflow_dispatch:
 
 jobs:
@@ -17,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Develop Deploy
+      - name: Develop deploy job
         if: github.ref == 'refs/heads/develop'
         uses: appleboy/ssh-action@master
         with:
@@ -32,7 +28,7 @@ jobs:
             git pull origin develop
             exit
 
-      - name: Production Deploy
+      - name: Production deploy job
         if: github.ref == 'refs/heads/main'
         uses: appleboy/ssh-action@master
         with:
