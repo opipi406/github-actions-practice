@@ -1,0 +1,48 @@
+name: Build and Deploy
+run-name: ${{ github.actor }} is deploying ${{ github.repository }} to ${{ github.ref_name }} 🚀
+
+on:
+  push:
+    branches:
+      - develop
+      - main
+  pull_request:
+    branches:
+      - develop
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Develop Deploy
+        if: github.ref == 'refs/heads/develop'
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DEV_HOST }}
+          username: ${{ secrets.DEV_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.DEV_PORT }}
+          script: |
+            cd ~/www/github-actions-practice/
+            git fetch
+            git checkout develop
+            git pull origin develop
+            exit
+
+      - name: Production Deploy
+        if: github.ref == 'refs/heads/main'
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.PRODUCTION_HOST }}
+          username: ${{ secrets.PRODUCTION_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.PRODUCTION_PORT }}
+          script: |
+            cd ~/workspace/github-actions-practice/
+            git fetch
+            git checkout main
+            git pull origin main
+            exit
