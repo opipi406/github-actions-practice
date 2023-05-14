@@ -24,7 +24,7 @@ jobs:
           host: ${{ secrets.DEV_HOST }}
           username: ${{ secrets.DEV_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
+          port: ${{ secrets.DEV_PORT }}
           script: |
             cd ~/www/github-actions-practice/
             git fetch
@@ -39,9 +39,9 @@ jobs:
           host: ${{ secrets.PRODUCTION_HOST }}
           username: ${{ secrets.PRODUCTION_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
+          port: ${{ secrets.PRODUCTION_PORT }}
           script: |
-            cd ~/www/github-actions-practice/
+            cd ~/workspace/github-actions-practice/
             git fetch
             git checkout main
             git pull origin main
