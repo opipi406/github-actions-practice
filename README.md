@@ -9,15 +9,16 @@ https://github.com/[ユーザー]/[リポジトリ]/settings/secrets/actions で
 リポジトリページ > Settings > Secrets and variables の Actions 
 ```
 
-| 変数名          | 概要                                |
-| --------------- | ----------------------------------- |
-| DEV_HOST        | 開発サーバーのホスト名              |
-| DEV_PORT        | 開発サーバーの接続ポート番号        |
-| DEV_USER        | 開発サーバーの接続ユーザー名        |
-| PRODUCTION_HOST | 本番サーバーのホスト名              |
-| PRODUCTION_PORT | 本番サーバーの接続ポート番号        |
-| PRODUCTION_USER | 本番サーバーの接続ユーザー名        |
-| SSH_PRIVATE_KEY | サーバー接続用のローカルのSSH秘密鍵 |
+| 変数名                     | 概要                                    |
+| -------------------------- | --------------------------------------- |
+| DEV_HOST                   | 開発サーバーのホスト名                  |
+| DEV_PORT                   | 開発サーバーの接続ポート番号            |
+| DEV_USER                   | 開発サーバーの接続ユーザー名            |
+| DEV_SSH_PRIVATE_KEY        | 開発サーバー接続用のローカルのSSH秘密鍵 |
+| PRODUCTION_HOST            | 本番サーバーのホスト名                  |
+| PRODUCTION_PORT            | 本番サーバーの接続ポート番号            |
+| PRODUCTION_USER            | 本番サーバーの接続ユーザー名            |
+| PRODUCTION_SSH_PRIVATE_KEY | 本番サーバー接続用のローカルのSSH秘密鍵 |
 
 <span style="color: red">※ エックスサーバー接続時はポート番号は`10022`になるので注意！</span>
 
