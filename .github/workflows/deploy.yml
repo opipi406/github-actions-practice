@@ -20,7 +20,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            cd ~/www/github-actions-practice
+            cd ~/www/github-actions-practice/
             git checkout develop
             git pull origin develop
             ls -la
