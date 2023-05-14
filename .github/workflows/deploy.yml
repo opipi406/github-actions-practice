@@ -1,5 +1,5 @@
 name: Build and Deploy
-run-name: ${{ github.actor }} is ${{ github.ref_name }} deploying ✅
+run-name: ${{ github.actor }} is deploying (${{ github.ref_name }}) ✅
 
 on:
   push:
