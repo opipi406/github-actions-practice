@@ -1,12 +1,8 @@
 name: Build and Deploy
-run-name: ${{ github.actor }} is deploying ${{ github.repository }} to ${{ github.ref_name }} 🚀
+run-name: ${{ github.actor }} is deploying (${{ github.ref_name }}) ✅
 
 on:
   push:
-    branches:
-      - develop
-      - main
-  pull_request:
     branches:
       - develop
       - main
@@ -17,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Develop Deploy
+      - name: Develop deploy job
         if: github.ref == 'refs/heads/develop'
         uses: appleboy/ssh-action@master
         with:
@@ -32,7 +28,7 @@ jobs:
             git pull origin develop
             exit
 
-      - name: Production Deploy
+      - name: Production deploy job
         if: github.ref == 'refs/heads/main'
         uses: appleboy/ssh-action@master
         with:
