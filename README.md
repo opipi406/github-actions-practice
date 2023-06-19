@@ -24,6 +24,7 @@ https://github.com/[ユーザー]/[リポジトリ]/settings/secrets/actions で
 
 ## 2. Deploy Keyの設定
 デプロイ先のサーバーにSSH接続し、`ssh-keygen`で認証鍵の生成を行う。  
+他のDeploy Keyは使い回せないため、個別に命名するのがおすすめ。 `id_<リポジトリ名>_ci` など  
 生成したSSH公開鍵をリポジトリSettings画面の**Deploy Key**に設定する。  
 
 https://github.com/[ユーザー]/[リポジトリ]/settings/keys でDeploy Keyを設定する。  
